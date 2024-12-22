@@ -6,15 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  private baseUrl = 'https://alarcosj.esi.uclm.es/fakeAccountsBE/users';
+  private baseUrl = 'http://localhost:9000/users';
 
   constructor(private http: HttpClient) {}
 
   // Registro de usuario (ya implementado)
-  register1(email: string, pwd1: string, pwd2: string): Observable<any> {
+  register1(email: string, pwd1: string, pwd2: string): Observable<string> {
     const info = { email, pwd1, pwd2 };
-    return this.http.post<any>(`${this.baseUrl}/registrar1`, info);
+    return this.http.post<string>('http://localhost:9000/users/registrar1', info, { responseType: 'text' as 'json' });
   }
+  
 
   // Inicio de sesión
   login(email: string, password: string): Observable<any> {

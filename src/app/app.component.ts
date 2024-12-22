@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { Register1Component } from "./register1/register1.component";
 import { LoginComponent } from "./login/login.component";
 import { DeleteUserComponent } from "./delete-user/delete-user.component";
+import { ApplicationConfig } from '@angular/core';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -13,3 +15,6 @@ import { DeleteUserComponent } from "./delete-user/delete-user.component";
 export class AppComponent {
   title = 'sslfe';
 }
+export const appConfig: ApplicationConfig = {
+  providers: [provideHttpClient(withFetch())]
+};

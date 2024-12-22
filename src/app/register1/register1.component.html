@@ -1,0 +1,49 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg" style="width: 350px; border-radius: 15px;">
+        <div class="card-header bg-primary text-white text-center" style="border-radius: 15px 15px 0 0;">
+            <h4 class="card-title mb-0">Registro de Usuario</h4>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input
+                        type="email"
+                        [(ngModel)]="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="Introduce tu email"
+                    />
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña:</label>
+                    <input
+                        type="password"
+                        [(ngModel)]="pwd1"
+                        name="password"
+                        class="form-control"
+                        placeholder="Introduce tu contraseña"
+                    />
+                </div>
+
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirmar Contraseña:</label>
+                    <input
+                        type="password"
+                        [(ngModel)]="pwd2"
+                        name="confirmPassword"
+                        class="form-control"
+                        placeholder="Repite tu contraseña"
+                    />
+                </div>
+
+                <div *ngIf="pwd1 !== pwd2 && pwd1 && pwd2" class="alert alert-danger text-center">
+                    Las contraseñas no coinciden
+                </div>
+
+                <button (click)="registrar()" class="btn btn-primary w-100">Registrar</button>
+            </form>
+        </div>
+    </div>
+</div>

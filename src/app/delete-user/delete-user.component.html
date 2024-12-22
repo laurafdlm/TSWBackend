@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <h2>Eliminar Usuario</h2>
+    <form>
+        <div class="mb-3">
+            <label for="userId" class="form-label">ID del Usuario:</label>
+            <input
+                type="text"
+                [(ngModel)]="userId"
+                name="userId"
+                class="form-control"
+                placeholder="Introduce el ID del usuario"
+            />
+        </div>
+        <button type="button" class="btn btn-danger w-100" (click)="deleteUser()">
+            Eliminar Usuario
+        </button>
+    </form>
+</div>
